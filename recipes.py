@@ -1,13 +1,7 @@
-"""
-6.1010 Spring '23 Lab 4: Recipes
-"""
-
 import pickle
 import sys
 
 sys.setrecursionlimit(20_000)
-# NO ADDITIONAL IMPORTS!
-
 
 def make_recipe_book(recipes):
     """
@@ -39,7 +33,6 @@ def make_atomic_costs(recipes):
                 
     return atomic_costs
 
-
 def lowest_cost(recipes, food_item, forbidden = set()):
     """
     Given a recipes list and the name of a food item, return the lowest cost of
@@ -70,7 +63,6 @@ def lowest_cost(recipes, food_item, forbidden = set()):
                 min_cost = cost
         return min_cost
 
-
 def scale_recipe(flat_recipe, n):
     """
     Given a dictionary of ingredients mapped to quantities needed, returns a
@@ -100,7 +92,6 @@ def make_grocery_list(flat_recipes):
             else:
                 grocery_list[item] = recipe[item]
     return grocery_list
-
 
 def cheapest_flat_recipe(recipes, food_item, forbidden = set()):
     """
@@ -151,7 +142,7 @@ def ingredient_mixes(flat_recipes):
     Given a list of lists of dictionaries, where each inner list represents all
     the flat recipes make a certain ingredient as part of a recipe, compute all
     combinations of the flat recipes.
-    # """
+    """
     mixes = flat_recipes[0] 
 
     for recipe_index, recipe in enumerate(flat_recipes):
@@ -203,7 +194,6 @@ def all_flat_recipes(recipes, food_item, forbidden = set()):
         return flat_recipes
 
 if __name__ == "__main__":
-    # load example recipes from section 3 of the write-up
     with open("test_recipes/example_recipes.pickle", "rb") as f:
         example_recipes = pickle.load(f)
 
